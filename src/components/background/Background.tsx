@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import moon from "../../public/moon.png";
-import "./background.css";
+import moon from "../../../public/moon.png";
+import "../background/background.css";
 
 interface BackgroundContainerProps {
    children: ReactNode;
