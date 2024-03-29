@@ -1,9 +1,11 @@
-import { DataGrid, GridColDef } from "@mui/x-data-grid";
-import Box from "@mui/material/Box";
-import { StyledEngineProvider } from "@mui/material/styles";
-import { useGetTags } from "../../hooks/useGetTags";
 import { useState, useEffect } from "react";
+import { DataGrid } from "@mui/x-data-grid";
+import Box from "@mui/material/Box";
 import { Alert, CircularProgress } from "@mui/material";
+import { StyledEngineProvider } from "@mui/material/styles";
+
+import { useGetTags } from "../../hooks/useGetTags";
+import { columns } from "./TableColumnsDef";
 
 interface Tag {
    id: number;
@@ -14,33 +16,6 @@ interface Tag {
 interface Props {
    pageSize: number;
 }
-
-const columns: GridColDef[] = [
-   {
-      field: "id",
-      headerName: "ID",
-      maxWidth: 200,
-      minWidth: 150,
-      headerAlign: "center",
-      align: "center",
-   },
-   {
-      field: "tag",
-      headerName: "Tag",
-      maxWidth: 320,
-      minWidth: 300,
-      headerAlign: "center",
-      align: "center",
-   },
-   {
-      field: "count",
-      headerName: "Count",
-      maxWidth: 320,
-      minWidth: 300,
-      headerAlign: "center",
-      align: "center",
-   },
-];
 
 export default function DataTable({ pageSize }: Props) {
    const { Tags = {}, isLoading } = useGetTags(pageSize);
