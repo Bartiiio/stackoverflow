@@ -3,9 +3,8 @@ import { DataGrid } from "@mui/x-data-grid";
 import Box from "@mui/material/Box";
 import { Alert, CircularProgress } from "@mui/material";
 import { StyledEngineProvider } from "@mui/material/styles";
-
-import { useGetTags } from "../../hooks/useGetTags";
-import { columns } from "./TableColumnsDef";
+import { useGetTags } from "../hooks/useGetTags";
+import { columns } from "../components/table/TableColumnsDef";
 
 interface Tag {
    id: number;

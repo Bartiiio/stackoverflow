@@ -1,7 +1,7 @@
 import { FC, useState } from "react";
-import Table from "../components/table/Table";
-import { Input } from "@mui/material";
 import { useQueryClient } from "@tanstack/react-query";
+import { Input } from "@mui/material";
+import Table from "../components/table/Table";
 
 interface DashboardProps {}
 

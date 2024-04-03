@@ -1,7 +1,8 @@
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import BackgroundContainer from "./components/background/Background";
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
+import PageNotFound from "./pages/PageNotFound";
 
 function App() {
    const queryClient = new QueryClient({
@@ -18,6 +19,7 @@ function App() {
                <Routes>
                   <Route path="dashboard" element={<Dashboard />} />
                   <Route path="/" element={<Navigate to="dashboard" />} />
+                  <Route path="*" element={<PageNotFound />} />
                </Routes>
             </BackgroundContainer>
          </BrowserRouter>
